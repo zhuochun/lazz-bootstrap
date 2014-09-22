@@ -1,0 +1,14 @@
+{
+  "name": "lazz-bootstrap",
+  "version": "0.0.1",
+  "description": "a static bootstrap blog using lazz",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Wang Zhuochun <zhuochun@hotmail.com> (http://www.bicrement.com/)",
+  "license": "MIT",
+  "dependencies": {
+    "lazz": "0.0.2"
+  }
+}

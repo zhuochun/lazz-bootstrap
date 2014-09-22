@@ -1,0 +1,38 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    block title
+      title= meta.title
+    link(rel="stylesheet", href=meta.asset.bootstrap.css)
+    link(rel="stylesheet", href="/assets/main.css")
+  body
+    nav.navbar.navbar-default(role="navigation")
+      .container
+        .navbar-header
+          button.navbar-toggle.collapsed(data-toggle="collapse", data-target="#navbar-collapse")
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand(href="/")= meta.title
+
+        .collapse.navbar-collapse#navbar-collapse
+          ul.nav.navbar-nav
+            each _page in file.pages
+              if _page.path == page.path
+                li.active
+                  a(href="/#{_page.path}")= _page.title
+              else
+                li
+                  a(href="/#{_page.path}")= _page.title
+
+    .container
+      .col-sm-8.main
+        block content
+
+      .col-sm-3.col-sm-offset-1.sidebar
+        .well.well-lg
+          p This is a static blog build using <a href="https://github.com/zhuochun/lazz">Lazz</a>. Clone this template on <a href="https://github.com/zhuochun/lazz">GitHub</a>!
+
+        include ../partials/widget-links.jade

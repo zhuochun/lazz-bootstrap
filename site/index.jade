@@ -1,0 +1,9 @@
+extends ./layouts/default.jade
+
+block content
+  each _post in file.posts
+    .blog-post
+      a(href=_post.path)
+        h2.blog-post-title= _post.title
+      .blog-post-content
+        != _post._content
