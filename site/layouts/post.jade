@@ -3,6 +3,8 @@ extends ./default.jade
 block content
   .blog-post
     h2.blog-post-title= page.title
+    .blog-post-meta
+      p Posted on #{filter.formatDate(page.date)}
     .blog-post-content
       != content
 

@@ -5,5 +5,7 @@ block content
     .blog-post
       a(href=_post.path)
         h2.blog-post-title= _post.title
+      .blog-post-meta
+        p Posted on #{filter.formatDate(page.date)}
       .blog-post-content
         != _post._content

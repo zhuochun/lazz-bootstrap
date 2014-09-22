@@ -9,6 +9,7 @@
   "author": "Wang Zhuochun <zhuochun@hotmail.com> (http://www.bicrement.com/)",
   "license": "MIT",
   "dependencies": {
-    "lazz": "0.0.2"
+    "lazz": "0.0.2",
+    "moment": "^2.8.3"
   }
 }
