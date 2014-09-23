@@ -4,20 +4,19 @@ block content
   .blog-post
     h2.blog-post-title= page.title
     .blog-post-meta
-      p Posted on #{filter.formatDate(page.date)}
+      p Posted on #{$displayDate(page.date)}
     .blog-post-content
       != content
 
   .blog-nav
     - var idx = file.posts.indexOf(page)
-    - var hasNext = idx < file.posts.length - 1
 
     ul.pager
-      if filter.hasPrev(idx)
+      if $hasPrev(idx)
         - var prev = file.posts[idx - 1]
         li.previous
           a(href="/#{prev.path}") &larr; #{prev.title}
-      if hasNext
+      if $hasNext(idx)
         - var next = file.posts[idx + 1]
         li.next
           a(href="/#{next.path}") #{next.title} &rarr;

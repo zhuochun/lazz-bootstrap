@@ -3,8 +3,8 @@ html
   head
     meta(charset="utf-8")
     block title
-      title= meta.title
-    link(rel="stylesheet", href=meta.asset.bootstrap.css)
+      title= site.title
+    link(rel="stylesheet", href=site.asset.bootstrap.css)
     link(rel="stylesheet", href="/assets/main.css")
   body
     nav.navbar.navbar-default(role="navigation")
@@ -15,17 +15,17 @@ html
             span.icon-bar
             span.icon-bar
             span.icon-bar
-          a.navbar-brand(href="/")= meta.title
+          a.navbar-brand(href="/")= site.title
 
         .collapse.navbar-collapse#navbar-collapse
           ul.nav.navbar-nav
             each _page in file.pages
               if _page.path == page.path
                 li.active
-                  a(href="/#{_page.path}")= _page.title
+                  a(href=$path(_page.path))= _page.title
               else
                 li
-                  a(href="/#{_page.path}")= _page.title
+                  a(href=$path(_page.path))= _page.title
 
     .container
       .col-sm-8.main
